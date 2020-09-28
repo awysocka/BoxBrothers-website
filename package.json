@@ -1,0 +1,49 @@
+{
+  "name": "boxbrothers-website",
+  "version": "1.0.0",
+  "description": "website for BoxBrothers",
+  "main": "index.html",
+  "scripts": {
+    "clean": "rimraf dist",
+    "scss": "node-sass src/scss/main.scss dist/css/style.css",
+    "prefix": "postcss dist/css/style.css --use=autoprefixer --map=false --output=dist/css/style.css",
+    "cssmin": "cleancss -o dist/css/style.css dist/css/style.css",
+    "babel": "babel src/js/script.js -o dist/js/script.js",
+    "jsmin": "terser dist/js/script.js --compress --mangle --output dist/js/script.js",
+    "cp:html": "find src -name '*.html' -type f -exec cp {} dist ;",
+    "cp:img": "cp -R src/img/ dist/img/",
+    "cp:vendor": "cp -R src/vendor/ dist/vendor/",
+    "cp": "npm run cp:html && npm run cp:img && npm run cp:vendor",
+    "build:css": "npm run scss && npm run prefix && npm run cssmin",
+    "build:js": "mkdirp dist/js && npm run babel && npm run jsmin",
+    "build": "npm run clean && npm run build:css && npm run build:js && npm run cp && echo Finished successfully!",
+    "watch:css": "node-sass src/scss/main.scss dist/css/style.css -w",
+    "live": "cd src && live-server --browser=chrome --mount=/css:../dist/css",
+    "dev": "npm-run-all --parallel scss watch:css live"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awysocka/BoxBrothers-website.git"
+  },
+  "author": "Anna Wysocka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/awysocka/BoxBrothers-website/issues"
+  },
+  "homepage": "https://github.com/awysocka/BoxBrothers-website#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "autoprefixer": "^9.8.6",
+    "clean-css-cli": "^4.3.0",
+    "mkdirp": "^1.0.4",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.1",
+    "terser": "^5.0.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
