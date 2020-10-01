@@ -62,3 +62,11 @@
 }
 
 
+//Media queries
+
+@include respond(desktop) {
+    .hamburger {
+        display: none;
+    }
+}
+

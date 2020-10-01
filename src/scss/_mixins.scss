@@ -5,3 +5,22 @@
     position: absolute;
     border-radius: 5px;
 }
+
+
+@mixin respond($breakpoints) {
+    @if $breakpoints == tab-port {
+        @media screen and (min-width: 600px) {@content}
+    };
+
+    @if $breakpoints == tab-land {
+        @media screen and (min-width: 960px) {@content}
+    };
+
+    @if $breakpoints == desktop {
+        @media screen and (min-width: 1367px) {@content}
+    };
+
+    // @if $breakpoints == touch-device {
+    //     @media (hover: hover) {@content}
+    // }
+}
