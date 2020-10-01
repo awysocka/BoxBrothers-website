@@ -1,0 +1,26 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background: $color-white;
+    color: $color-grey-dark;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: $color-orange;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
