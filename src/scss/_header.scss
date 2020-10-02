@@ -1,5 +1,7 @@
+//Navigation 
 
 .nav-container {
+    background-color: $color-white;
     padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
@@ -61,6 +63,59 @@
         padding-left: .3rem;
     }
 }
+
+//Hero image
+.home-container {
+    background-color: $color-grey-light;
+}
+
+.hero-container {
+    height: 70vh;
+    background-image: url(../img/hero_img.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // clip-path: polygon(60% 0, 100% 0, 100% 100%, 0 100%);
+
+    .hero-content {
+        max-width: 1200px;
+        height: 100%;
+        background-color: rgba(244,244,244,0.8);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 2rem;
+
+        .heading-primary {
+            color: $color-blue;
+            font-size: $font-s*4;
+            margin-bottom: 2rem;
+
+            span {
+                display: block;
+                font-size: $font-s*2;
+                line-height: 1.6;
+            }
+        }
+
+        .hero-text {
+            font-size: $font-m;
+            margin-bottom: 3rem;
+            line-height: 1.4;
+        }
+
+        .cta-btn {
+            background-color: $color-orange;
+            color: $color-white;
+            padding: 1rem 2.6rem;
+            font-size: $font-m;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    }
+}
+
 
 //Media queries
 
