@@ -9,15 +9,19 @@
 
 @mixin respond($breakpoints) {
     @if $breakpoints == tab-port {
-        @media screen and (min-width: 600px) {@content}
+        @media screen and (min-width: 768px) {@content}
     };
 
     @if $breakpoints == tab-land {
-        @media screen and (min-width: 960px) {@content}
+        @media screen and (min-width: 1100px) {@content}
     };
 
     @if $breakpoints == desktop {
-        @media screen and (min-width: 1367px) {@content}
+        @media screen and (min-width: 1365px) {@content}
+    };
+
+    @if $breakpoints == big-screen {
+        @media screen and (min-width: 1600px) {@content}
     };
 
     // @if $breakpoints == touch-device {

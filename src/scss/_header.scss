@@ -1,21 +1,26 @@
-//Navigation 
+.header {
+    box-shadow: $shadow-light;
+}
 
 .nav-container {
+    max-height: 82px;
     background-color: $color-white;
-    padding: 1rem 2rem;
+    margin: 0 auto;
+    padding: $sp-small $sp-small*2;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    box-shadow: $shadow-light;
+
 
     .logo {
-        margin-bottom: 1rem;
-        font-size: $font-m*2;
+        margin-bottom: $sp-small;
+        font-size: $font-s*2 + $font-xs;
         font-weight: bold;
         line-height: 1;
         color: $color-grey-dark;
     }
+
     .navigation {
         height: 100vh;
         background-color: $color-orange;
@@ -26,7 +31,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
+        z-index: $z-index-navigation;
         transform: translateX(100vw);
         transition: transform .5s ease-in-out;
 
@@ -59,69 +64,76 @@
 
     .phone-number::before {
         font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f879";
-        margin-right: 1rem;
+        margin-right: $sp-small;
         padding-left: .3rem;
     }
-}
+}    
 
-//Hero image
-.home-container {
-    background-color: $color-grey-light;
+.hero {
+    background: url(../img/hero_img.jpg) no-repeat center;
+    background-size: cover;
 }
 
 .hero-container {
-    height: 70vh;
-    background-image: url(../img/hero_img.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    // clip-path: polygon(60% 0, 100% 0, 100% 100%, 0 100%);
+    background-color: rgba(244,244,244,0.9);
+}
 
-    .hero-content {
-        max-width: 1200px;
-        height: 100%;
-        background-color: rgba(244,244,244,0.8);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 2rem;
+.hero-content {
+    max-width: 1366px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: $sp-small*8 $sp-small*2 $sp-small*6;
+    margin: 0 auto;
 
-        .heading-primary {
-            color: $color-blue;
-            font-size: $font-s*4;
-            margin-bottom: 2rem;
+    .heading-primary {
+        color: $color-blue;
+        font-size: $font-s*3;
+        margin-bottom: $sp-small*2;
 
-            span {
-                display: block;
-                font-size: $font-s*2;
-                line-height: 1.6;
-            }
+        span {
+            display: block;
+            font-size: $font-s*2;
+            line-height: 1.6;
         }
+    }
 
-        .hero-text {
-            font-size: $font-m;
-            margin-bottom: 3rem;
-            line-height: 1.4;
-        }
+    .hero-text {
+        max-width: 500px;
+        font-size: $font-m;
+        margin-bottom: $sp-small*3;
+        line-height: 1.4;
+    }
 
-        .cta-btn {
-            background-color: $color-orange;
-            color: $color-white;
-            padding: 1rem 2.6rem;
-            font-size: $font-m;
-            font-weight: bold;
-            border-radius: 5px;
-        }
+    .cta-btn {
+        background-color: $color-orange;
+        color: $color-white;
+        padding: $sp-small 2.6rem;
+        font-size: $font-m;
+        font-weight: bold;
+        border-radius: 5px;
     }
 }
 
 
 //Media queries
 
+//Navigation
+
+@include respond(tab-port) {
+    .nav-container {
+
+        .logo {
+            font-size: $font-s*3;
+        }
+    }
+}
+
 @include respond(desktop) {
     .nav-container {
-        padding: 2rem 3rem;
+        padding: $sp-small*2 $sp-small*3;
         flex-direction: row;
         align-items: flex-end;
 
@@ -143,7 +155,7 @@
     
                 &-element {
                     padding: 0;
-                    margin-right: 3rem;
+                    margin-right: $sp-small*3;
                 }
             }
     
@@ -159,6 +171,120 @@
 
         .phone-number {
             margin-left: auto;
+        }
+    }
+}
+
+//Hero section
+
+@include respond(tab-port) {
+
+    .hero-content {
+        padding: 14rem $sp-small*6 $sp-large;
+    
+        .heading-primary {
+            font-size: $font-s*4;
+            margin-bottom: $sp-small*3;
+    
+            span {
+                font-size: $font-s*3;
+            }
+        }
+    
+        .hero-text {
+            line-height: 1.6;
+            margin-bottom: $sp-small*4;
+        }
+    
+        .cta-btn {
+            padding: $sp-small 2.6rem;
+            font-size: $font-s*2;
+        }
+    }
+}
+
+@include respond(tab-land) {
+
+    .hero {
+        background: url(../img/hero_img.jpg) no-repeat right;
+        background-size: auto 100%;
+    }
+
+    .hero-container {
+        background-color: rgba(244,244,244,1);
+        clip-path: polygon(0 0, 65% 0, 35% 100%, 0% 100%);
+    }
+    
+    .hero-content {
+        padding: 17rem $sp-small*6 $sp-large*2;
+    
+        .heading-primary {
+            font-size: $font-s*4 + $font-xs;
+            margin-bottom: $sp-small*3;
+    
+            span {
+                font-size: $font-s*3 + $font-xs;
+            }
+        }
+
+        .hero-text {
+            width: 40vw;
+        }
+    }
+}
+
+@include respond(desktop) {
+
+    .hero {
+        background: url(../img/hero_img.jpg) no-repeat right;
+        background-size: auto 120%;
+    }
+
+    .hero-container {
+        background-color: rgba(244,244,244,1);
+        clip-path: polygon(0 0, 70% 0, 45% 100%, 0% 100%);
+    }
+
+    .hero-content {
+        padding: 12rem $sp-large 11rem;
+    
+        .heading-primary {
+            font-size: $font-s*5 + $font-xs;
+            margin-bottom: $sp-small*3;
+    
+            span {
+                font-size: $font-s*4;
+            }
+        }
+
+        .hero-text {
+            width: 40vw;
+            font-weight: $font-xs*3 ;
+        }
+    }
+}
+
+@include respond(big-screen) {
+    
+    .hero {
+        background: url(../img/hero_img.jpg) no-repeat right;
+        background-size: auto 50vw;
+    }
+
+    .hero-content {
+        padding: $sp-large*2 $sp-large 24rem;
+    
+        .heading-primary {
+            font-size: $font-s*6;
+            margin-bottom: $sp-small*3;
+    
+            span {
+                font-size: $font-s*4 + $font-xs;
+            }
+        }
+
+        .hero-text {
+            width: 40vw;
         }
     }
 }
