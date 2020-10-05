@@ -72,6 +72,7 @@
 .hero {
     background: url(../img/hero_img.jpg) no-repeat center;
     background-size: cover;
+    margin-bottom: $sp-large/2; 
 }
 
 .hero-container {
@@ -79,7 +80,7 @@
 }
 
 .hero-content {
-    max-width: 1366px;
+    max-width: $max-content-width;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -208,6 +209,7 @@
     .hero {
         background: url(../img/hero_img.jpg) no-repeat right;
         background-size: auto 100%;
+        margin-bottom: $sp-large; 
     }
 
     .hero-container {

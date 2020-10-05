@@ -6,6 +6,15 @@
     border-radius: 5px;
 }
 
+@mixin font-awesome-before {
+    color: $color-orange;
+    font-size: $font-m*2;
+    margin-right: $sp-small*2;
+    display: inline-block;
+    width: 40px;
+    vertical-align: bottom;
+}
+
 
 @mixin respond($breakpoints) {
     @if $breakpoints == tab-port {

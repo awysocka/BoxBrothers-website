@@ -24,3 +24,31 @@ a {
 ul {
     list-style: none;
 }
+
+.main-content {
+    overflow-x: hidden;
+}
+
+.heading-secondary {
+    color: $color-blue;
+    font-size: 2rem;
+    text-transform: uppercase;
+    position: relative;
+    text-align: center;
+    margin-bottom: 4rem ;
+}
+
+.heading-secondary::after {
+    content: ' ';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform:translateX(-50%);
+    margin-top: 5px;
+    display: block;
+    border: 1px solid $color-blue;
+    border-radius: 2px;
+    width: 6rem;
+}
+
+
