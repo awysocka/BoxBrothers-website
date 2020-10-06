@@ -1,0 +1,33 @@
+.cta-divider {
+    background: url(../img/ice.jpg) no-repeat center;  
+
+    .cta-background {
+        background-color: rgba(244,244,244,0.9);
+    }
+}
+
+.divider-content {
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .heading-secondary {
+        margin-bottom: 0;
+    }
+
+    .heading-secondary::after {
+        display: none;
+    }
+
+    .paragraph {
+        margin: 3rem 0;
+        font-size: $font-m;
+        text-align: center;
+
+        span {
+            display: block;
+        }
+    }
+}
