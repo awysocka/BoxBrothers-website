@@ -1,0 +1,34 @@
+.delivery-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    overflow-x: hidden;
+    margin-bottom: $sp-large/2;
+
+    .map {
+        margin-bottom: $sp-small*3;
+
+        iframe {
+            width: 100%;
+
+        }
+    }
+
+    .delivery-description {
+        
+        .paragraph {
+            font-size: $font-m;
+            margin-bottom: $sp-small*3;
+
+            span {
+                display: block;
+            }
+        }
+
+        
+        .main {
+            font-size: $font-s*2;
+            font-weight: 600;
+        }
+    }
+}
