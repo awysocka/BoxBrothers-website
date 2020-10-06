@@ -15,6 +15,7 @@
     }
 
     .delivery-description {
+        text-align: center;
         
         .paragraph {
             font-size: $font-m;
@@ -31,4 +32,51 @@
             font-weight: 600;
         }
     }
+}
+@include respond(tab-port) {
+
+    .delivery-content {
+        padding: 0 4rem;
+    }
+
+}
+
+@include respond(tab-land) {
+
+    .delivery-content {
+        flex-direction: row;
+        max-width: $max-content-width;
+        margin: 0 auto;
+        margin-bottom: $sp-large;
+        min-width: 500px;
+
+        .map {
+            width: 65%;
+            margin-bottom: 0;
+
+        }
+
+        .delivery-description {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: $color-grey-light;
+            text-align: start;
+            padding: 5rem;
+            width: 35%;
+
+            .paragraph {
+                margin-bottom: 0;
+            }
+
+            .main {
+                font-size: $font-s*3;
+                padding-bottom: 4rem;
+            }
+        }
+    }
+
+ 
+
+
 }
