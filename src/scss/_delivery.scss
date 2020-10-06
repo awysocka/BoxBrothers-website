@@ -19,7 +19,11 @@
         
         .paragraph {
             font-size: $font-m;
-            margin-bottom: $sp-small*3;
+            
+
+            &:not(:last-child) {
+                margin-bottom: $sp-small*3;
+            }
 
             span {
                 display: block;
@@ -75,8 +79,4 @@
             }
         }
     }
-
- 
-
-
 }

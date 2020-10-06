@@ -1,0 +1,21 @@
+.gallery-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    overflow-x: hidden;
+    margin-bottom: $sp-large/2;
+}
+
+.truck-img {
+
+    &:not(:last-child) {
+        margin-bottom: $sp-small*2;
+    }
+
+    img {
+        width: 100%;
+    }
+
+
+}
+
