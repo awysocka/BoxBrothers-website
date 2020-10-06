@@ -31,7 +31,7 @@ ul {
 
 .heading-secondary {
     color: $color-blue;
-    font-size: 2rem;
+    font-size: $font-s*2;
     text-transform: uppercase;
     position: relative;
     text-align: center;
@@ -49,6 +49,16 @@ ul {
     border: 1px solid $color-blue;
     border-radius: 2px;
     width: 6rem;
+}
+
+@include respond(tab-land) {
+    .heading-secondary {
+        font-size: $font-s*3;
+    }
+
+    .heading-secondary::after {
+        width: 8rem;
+    }
 }
 
 

@@ -1,6 +1,8 @@
 
 .service {
     max-width: $max-content-width;
+    margin: 0 auto;
+    margin-bottom: $sp-large/2;
 
     &-description {
         padding: 0 2rem;
@@ -23,7 +25,7 @@
     flex-direction: column;
     margin-bottom: $sp-small*2;
     
-    p {
+    .service-subtitle {
         font-size: $font-m;
         text-transform: uppercase;
         line-height: 1.6;
@@ -80,14 +82,78 @@
 .service-images {
     overflow-x: hidden;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 100%;
 
     img {
-        width: 45vw;
-        max-width: 47%;
+        width: 48%;
     }
 }
 
+//MEDIA QUERIES 
 
+@include respond(tab-port) {
+    .service-pros {
+        margin-bottom: $sp-small*6;
+
+        .service-subtitle {
+            margin-bottom: $sp-small*3;
+        }
+    }
+
+}
+
+@include respond(tab-land) {
+   
+    .service {
+        margin-bottom: $sp-large;
+
+        &-description {
+            padding: 0 4rem;
+            margin-bottom: $sp-small*6;
+        }
+
+        &-content {
+            padding: 0 4rem;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: space-between;
+            min-height: 500px;
+        }
+    }
+
+    .service-pros {
+        margin-bottom: 0;
+        max-width: 65%;
+
+        .service-subtitle {
+            margin-bottom: 4rem;
+            font-size: $font-xs*4;
+        }
+
+        .service-list {
+            justify-content: space-between;
+            height: 100%;
+
+            .service-item {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .service-images {
+        flex-direction: column;
+        max-width: 30%;
+    
+        img {
+            width: 100%;
+
+            &:last-child {
+                padding-top: 2rem;
+            }
+        }
+    }
+}
 
 

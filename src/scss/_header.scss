@@ -181,7 +181,7 @@
 @include respond(tab-port) {
 
     .hero-content {
-        padding: 14rem $sp-small*6 $sp-large;
+        padding: 14rem 2rem $sp-large;
     
         .heading-primary {
             font-size: $font-s*4;
@@ -218,7 +218,7 @@
     }
     
     .hero-content {
-        padding: 17rem $sp-small*6 $sp-large*2;
+        padding: 17rem 4rem $sp-large*2;
     
         .heading-primary {
             font-size: $font-s*4 + $font-xs;
@@ -248,7 +248,7 @@
     }
 
     .hero-content {
-        padding: 12rem $sp-large 11rem;
+        padding: 12rem 4rem 11rem;
     
         .heading-primary {
             font-size: $font-s*5 + $font-xs;
@@ -274,7 +274,7 @@
     }
 
     .hero-content {
-        padding: $sp-large*2 $sp-large 24rem;
+        padding: $sp-large*2 4rem 24rem;
     
         .heading-primary {
             font-size: $font-s*6;
