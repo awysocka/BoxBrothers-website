@@ -37,19 +37,13 @@
         }
     }
 }
-@include respond(tab-port) {
-
-    .delivery-content {
-        padding: 0 4rem;
-    }
-
-}
 
 @include respond(tab-land) {
 
     .delivery-content {
         flex-direction: row;
         max-width: $max-content-width;
+        padding: 0 4rem;
         margin: 0 auto;
         margin-bottom: $sp-large;
         min-width: 500px;
