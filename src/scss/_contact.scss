@@ -1,0 +1,68 @@
+.contact {
+    background-color: $color-orange;
+    
+    &-content {
+        max-width: $max-content-width;
+        margin: 0 auto;
+        padding: $sp-large/2 2rem;
+    }
+
+    .heading-secondary {
+        color: $color-white;
+    }
+
+    .heading-secondary:after {
+        border: 1px solid $color-white;
+    }
+}
+
+.contact-list {
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: $font-m;
+
+    .contact-item {
+        text-align: center;
+
+        &:not(:last-child) {
+            margin-bottom: $sp-small*2;
+        }
+
+        .phone::before {
+            @include icon-before;
+
+            font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f879";
+        }
+
+        .adress::before {
+            @include icon-before;
+
+            font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f3c5";
+        }
+
+        .mail::before {
+            @include icon-before;
+
+            font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f0e0";
+        }
+    }
+
+    
+    
+}
+
+.contact-description {
+
+    text-align: center;
+
+    span {
+        display: block;
+    }
+
+    a {
+        color: $color-white;
+    }
+    
+}

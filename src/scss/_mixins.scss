@@ -26,6 +26,15 @@
     }
 }
 
+@mixin icon-before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    font-size: $font-s*3;
+    padding: $sp-small;
+}
+
 
 @mixin respond($breakpoints) {
     @if $breakpoints == tab-port {
