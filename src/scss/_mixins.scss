@@ -33,6 +33,11 @@
     text-rendering: auto;
     font-size: $font-s*3;
     padding: $sp-small;
+
+    @include respond(tab-land) {
+        font-size: $font-m*2;
+        padding: $sp-small*2;
+    }
 }
 
 
