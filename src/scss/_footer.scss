@@ -1,0 +1,17 @@
+.footer {
+    background-color: $color-grey-light;
+    text-align: center;
+    padding: $sp-small*2;
+    color: $color-grey-dark;
+    font-size: $font-xs*2;
+
+    a {
+        color: $color-grey-dark;
+    }
+}
+
+@include respond(tab-port) {
+    .footer {
+        font-size: $font-m;
+    }
+}
