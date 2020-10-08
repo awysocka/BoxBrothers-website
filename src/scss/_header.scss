@@ -1,19 +1,19 @@
 .header {
+    height: 82px;
     box-shadow: $shadow-light;
-}
 
-.nav-container {
-    max-height: 82px;
-    background-color: $color-white;
-    margin: 0 auto;
-    padding: $sp-small $sp-small*2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-
-
-    .logo {
+    .nav-container {
+        max-height: 82px;
+        background-color: $color-white;
+        margin: 0 auto;
+        padding: $sp-small*2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }  
+    
+    .company-logo {
         margin-bottom: $sp-small;
         font-size: $font-s*2 + $font-xs;
         font-weight: bold;
@@ -67,69 +67,65 @@
         margin-right: $sp-small;
         padding-left: .3rem;
     }
-}    
+}
+
 
 .hero {
     background: url(../img/hero_img.jpg) no-repeat center;
-    background-size: cover;
-    margin-bottom: $sp-large/2; 
-}
+    background-size: cover;  
 
-.hero-container {
-    background-color: rgba(244,244,244,0.9);
-}
-
-.hero-content {
-    max-width: $max-content-width;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: $sp-small*8 $sp-small*2 $sp-small*6;
-    margin: 0 auto;
-
-    .heading-primary {
-        color: $color-blue;
-        font-size: $font-s*3;
-        margin-bottom: $sp-small*2;
-
-        span {
-            display: block;
-            font-size: $font-s*2;
-            line-height: 1.6;
-        }
+    &-container {
+        background-color: rgba(244,244,244,0.9);
+    }
+    
+    &-content {
+        max-width: $max-content-width;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: $sp-small*8 $sp-small*2 $sp-small*6;
+        margin: 0 auto;
     }
 
-    .hero-text {
+    &-text {
+        @include paragraph;
+
         max-width: 500px;
-        font-size: $font-m;
         margin-bottom: $sp-small*3;
-        line-height: 1.4;
     }
 }
 
-
-//Media queries
+//MEDIA QUERIES
 
 //Navigation
 
 @include respond(tab-port) {
-    .nav-container {
+    .header {
 
-        .logo {
+        .nav-container {
+            padding: $sp-small*3 $sp-small*4;
+        }
+
+        .company-logo {
             font-size: $font-s*3;
         }
     }
 }
 
 @include respond(desktop) {
-    .nav-container {
-        padding: $sp-small*2 $sp-small*3;
-        flex-direction: row;
-        align-items: flex-end;
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: $z-index-header;
 
-        .logo {
+        .nav-container {
+            flex-direction: row;
+            align-items: flex-end;
+        }
+
+        .company-logo {
             margin-bottom: 0;
             margin-right: 3.6rem;
         }
@@ -163,6 +159,19 @@
 
         .phone-number {
             margin-left: auto;
+            transition: color .2s ease-in-out;
+        }
+    }
+}
+
+@include respond(touch-device) {
+
+    .header {
+
+        .phone-number {
+            &:hover {
+                color: $color-grey-dark;
+            }
         }
     }
 }
@@ -171,26 +180,14 @@
 
 @include respond(tab-port) {
 
-    .hero-content {
-        padding: 14rem 2rem $sp-large;
-    
-        .heading-primary {
-            font-size: $font-s*4;
-            margin-bottom: $sp-small*3;
-    
-            span {
-                font-size: $font-s*3;
-            }
+    .hero {
+
+        &-content {
+            padding: 14rem 4rem $sp-large;         
         }
-    
-        .hero-text {
-            line-height: 1.6;
+
+        &-text {
             margin-bottom: $sp-small*4;
-        }
-    
-        .cta-btn {
-            padding: $sp-small 2.6rem;
-            font-size: $font-s*2;
         }
     }
 }
@@ -200,27 +197,17 @@
     .hero {
         background: url(../img/hero_img.jpg) no-repeat right;
         background-size: auto 100%;
-        margin-bottom: $sp-large; 
-    }
 
-    .hero-container {
-        background-color: rgba(244,244,244,1);
-        clip-path: polygon(0 0, 65% 0, 35% 100%, 0% 100%);
-    }
-    
-    .hero-content {
-        padding: 17rem 4rem $sp-large*2;
-    
-        .heading-primary {
-            font-size: $font-s*4 + $font-xs;
-            margin-bottom: $sp-small*3;
-    
-            span {
-                font-size: $font-s*3 + $font-xs;
-            }
+        &-container {
+            background-color: rgba(244,244,244,1);
+            clip-path: polygon(0 0, 65% 0, 35% 100%, 0% 100%);
         }
-
-        .hero-text {
+        
+        &-content {
+            padding: 17rem 4rem $sp-large*2;  
+        }
+        
+        &-text {
             width: 40vw;
         }
     }
@@ -231,28 +218,18 @@
     .hero {
         background: url(../img/hero_img.jpg) no-repeat right;
         background-size: auto 120%;
-    }
 
-    .hero-container {
-        background-color: rgba(244,244,244,1);
-        clip-path: polygon(0 0, 70% 0, 45% 100%, 0% 100%);
-    }
-
-    .hero-content {
-        padding: 12rem 4rem 11rem;
-    
-        .heading-primary {
-            font-size: $font-s*5 + $font-xs;
-            margin-bottom: $sp-small*3;
-    
-            span {
-                font-size: $font-s*4;
-            }
+        &-container {
+            background-color: rgba(244,244,244,1);
+            clip-path: polygon(0 0, 70% 0, 45% 100%, 0% 100%);
         }
-
-        .hero-text {
+    
+        &-content {
+            padding: 12rem 4rem 11rem; 
+        }
+    
+        &-text {
             width: 40vw;
-            font-weight: $font-xs*3 ;
         }
     }
 }
@@ -262,22 +239,9 @@
     .hero {
         background: url(../img/hero_img.jpg) no-repeat right;
         background-size: auto 50vw;
-    }
 
-    .hero-content {
-        padding: $sp-large*2 4rem 24rem;
-    
-        .heading-primary {
-            font-size: $font-s*6;
-            margin-bottom: $sp-small*3;
-    
-            span {
-                font-size: $font-s*4 + $font-xs;
-            }
-        }
-
-        .hero-text {
-            width: 40vw;
+        &-content {
+            padding: $sp-large*2 4rem 24rem;  
         }
     }
 }

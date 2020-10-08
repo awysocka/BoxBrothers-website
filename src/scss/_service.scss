@@ -1,15 +1,14 @@
 
 .service {
     max-width: $max-content-width;
-    margin: 0 auto;
-    margin-bottom: $sp-large/2;
-
+    
     &-description {
+        @include paragraph;
+        
+        max-width: 940px;
         padding: 0 2rem;
-        font-size: $font-m;
-        line-height: 1.6;
         text-align: center;
-        margin-bottom: $sp-small*4;
+        margin: 0 auto $sp-small*4;
     }
 
     &-content {
@@ -18,140 +17,146 @@
         display: flex;
         flex-direction: column;
     }
-}
 
-.service-pros {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: $sp-small*2;
-    
-    .service-subtitle {
-        font-size: $font-m;
-        text-transform: uppercase;
-        line-height: 1.6;
-    }
-
-    .service-list {
+    &-pros {
         display: flex;
         flex-direction: column;
+        margin-bottom: $sp-small*2;
+    }
 
-        .service-item {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            margin-top: $sp-small*2;
+    &-subtitle {
+        font-size: $font-m;
+        text-transform: uppercase;
+    }
 
-            .availability::before {
-                @include font-awesome-before;
-        
-                font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f879";
-            }
-        
-            .delivery::before {
-                @include font-awesome-before;
-        
-                font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f49e";
-            }
-        
-            .supply-area::before {
-                @include font-awesome-before;
-        
-                font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f5a0";
-            }
-        
-            .delivery-vehicles::before {
-                @include font-awesome-before;
-        
-                font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f0d1";
-            }
-        
-            .monitoring::before {
-                @include font-awesome-before;
-        
-                font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f00c";
-            }
+    &-list {
+        display: flex;
+        flex-direction: column;
+    }
 
-            .description {
-                font-size: $font-m;
-                line-height: 1.6;
-                text-transform: none;
-            }
+    &-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: $sp-small*2;
+
+        .availability::before {
+            @include font-awesome-before;
+    
+            font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f879";
+        }
+    
+        .delivery::before {
+            @include font-awesome-before;
+    
+            font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f49e";
+        }
+    
+        .supply-area::before {
+            @include font-awesome-before;
+    
+            font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f5a0";
+        }
+    
+        .delivery-vehicles::before {
+            @include font-awesome-before;
+    
+            font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f0d1";
+        }
+    
+        .monitoring::before {
+            @include font-awesome-before;
+    
+            font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f00c";
+        }
+
+        &-description {
+            @include paragraph;
+
+            text-transform: none;
         }
     }
-}
-
-.service-images {
-    overflow-x: hidden;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-
-    img {
-        width: 48%;
+    
+    &-images {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        overflow-x: hidden;
+    
+        img {
+            width: 48%;
+        }
     }
 }
 
 //MEDIA QUERIES 
 
 @include respond(tab-port) {
-    .service-pros {
-        margin-bottom: $sp-small*6;
 
-        .service-subtitle {
-            margin-bottom: $sp-small*3;
+    .service {
+
+        &-description {
+            padding: 0 4rem;
+        }
+        &-content {
+            padding: 0 4rem;
+        }
+
+        &-pros {
+            margin-bottom: $sp-small*6;
+        }
+
+        &-item {
+            margin-top: $sp-small*4;
         }
     }
-
 }
 
 @include respond(tab-land) {
    
     .service {
-        margin-bottom: $sp-large;
-
+        
         &-description {
-            padding: 0 4rem;
             margin-bottom: $sp-small*6;
         }
 
         &-content {
-            padding: 0 4rem;
             display: flex;
             flex-direction: row;
             align-items: stretch;
             justify-content: space-between;
             min-height: 500px;
         }
-    }
 
-    .service-pros {
-        margin-bottom: 0;
-        max-width: 65%;
+        &-pros {
+            margin-bottom: 0;
+            max-width: 55%;
+        }
 
-        .service-subtitle {
+        &-subtitle {
             margin-bottom: 4rem;
             font-size: $font-xs*4;
         }
 
-        .service-list {
+        &-list {
             justify-content: space-between;
             height: 100%;
-
-            .service-item {
-                margin-top: 0;
-            }
         }
-    }
 
-    .service-images {
-        flex-direction: column;
-        max-width: 30%;
+        &-item {
+            margin-top: 0;
+        }
+
+        &-images {
+            flex-direction: column;
+            max-width: 35%;
+        
+            img {
+                width: 100%;
     
-        img {
-            width: 100%;
-
-            &:last-child {
-                padding-top: 2rem;
+                &:last-child {
+                    padding-top: 4rem;
+                }
             }
         }
     }

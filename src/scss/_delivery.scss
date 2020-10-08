@@ -1,75 +1,100 @@
-.delivery-content {
-    display: flex;
-    flex-direction: column;
-    padding: 0 2rem;
-    overflow-x: hidden;
-    margin-bottom: $sp-large/2;
+.delivery {
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        padding: 0 2rem;
+        overflow-x: hidden;
+    }
 
     .map {
         margin-bottom: $sp-small*3;
 
         iframe {
             width: 100%;
-
         }
     }
 
-    .delivery-description {
+    &-description {
         text-align: center;
+    }
+
+    .paragraph {
+        @include paragraph;
         
-        .paragraph {
-            font-size: $font-m;
-            
 
-            &:not(:last-child) {
-                margin-bottom: $sp-small*3;
-            }
-
-            span {
-                display: block;
-            }
+        &:not(:last-child) {
+            margin-bottom: $sp-small*3;
         }
 
-        
-        .main {
-            font-size: $font-s*2;
-            font-weight: 600;
+        span {
+            display: block;
+        }
+    }
+
+    .main {
+        font-size: $font-s*2;
+        font-weight: 600;
+    }
+}
+
+
+@include respond(tab-port) {
+
+    .delivery {
+
+        &-content {
+            padding: 0 4rem;
         }
     }
 }
 
 @include respond(tab-land) {
 
-    .delivery-content {
-        flex-direction: row;
-        max-width: $max-content-width;
-        padding: 0 4rem;
-        margin: 0 auto;
-        margin-bottom: $sp-large;
-        min-width: 500px;
+    .delivery {
+
+        &-content {
+            flex-direction: row;
+            max-width: $max-content-width;
+            margin: 0 auto;
+        }
 
         .map {
             width: 65%;
             margin-bottom: 0;
-
         }
 
-        .delivery-description {
+        &-description {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             background-color: $color-grey-light;
             text-align: start;
-            padding: 5rem;
+            padding: 5rem 4rem;
             width: 35%;
+        }
 
-            .paragraph {
+        .paragraph {
+
+            &:not(:last-child) {
                 margin-bottom: 0;
             }
+        }
 
-            .main {
-                font-size: $font-s*3;
-                padding-bottom: 4rem;
+        .main {
+            font-size: $font-xs*4;
+            padding-bottom: 4rem;
+        }
+    }
+}
+
+@include respond(touch-device) {
+
+    .delivery {
+
+        &-description {
+            a:hover {
+                @include hover-link($color-orange);
             }
         }
     }

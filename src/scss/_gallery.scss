@@ -1,47 +1,46 @@
-.gallery-content {
-    display: flex;
-    flex-direction: column;
-    padding: 0 2rem;
-    overflow-x: hidden;
-    max-width: $max-content-width;
-    margin: 0 auto;
-    margin-bottom: $sp-large/2;
-}
+.gallery {
 
-.truck-img {
-
-    &:not(:last-child) {
-        margin-bottom: $sp-small*2;
+    &-content {
+        display: flex;
+        flex-direction: column;
+        padding: 0 2rem;
+        overflow-x: hidden;
+        max-width: $max-content-width;
+        margin: 0 auto;
     }
-
-    img {
-        width: 100%;
-    }
-
-
-}
-
-@include respond(tab-port) {
-    .gallery-content {
-        flex-direction: row;
-        justify-content: center;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(100px, 1fr));
-        grid-gap: $sp-small*2;
-    }
-
+    
     .truck-img {
-        
+    
         &:not(:last-child) {
-            margin-bottom: 0;
+            margin-bottom: $sp-small*2;
+        }
+    
+        img {
+            width: 100%;
         }
     }
 }
 
-@include respond(tab-land) {
+//MEDIA QUERIES
 
-    .gallery-content {
-        padding: 0 4rem;
-        margin-bottom: $sp-large;
+@include respond(tab-port) {
+
+    .gallery {
+
+        &-content {
+            padding: 0 4rem;
+            flex-direction: row;
+            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(100px, 1fr));
+            grid-gap: $sp-small*4;
+        }
+    
+        .truck-img {
+            
+            &:not(:last-child) {
+                margin-bottom: 0;
+            }
+        }
     }
 }

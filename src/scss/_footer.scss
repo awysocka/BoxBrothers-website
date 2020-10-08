@@ -10,8 +10,10 @@
     }
 }
 
-@include respond(tab-port) {
+@include respond(touch-device) {
     .footer {
-        font-size: $font-m;
+        a:hover {
+            @include hover-link($color-grey-dark)
+        }
     }
 }

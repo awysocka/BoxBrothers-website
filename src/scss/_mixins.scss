@@ -32,12 +32,21 @@
     font-variant: normal;
     text-rendering: auto;
     font-size: $font-s*3;
-    padding: $sp-small;
+    padding: 0 $sp-small $sp-small;
 
     @include respond(tab-land) {
         font-size: $font-m*2;
-        padding: $sp-small*2;
+        padding: 0 $sp-small*2 $sp-small*2;
     }
+}
+
+@mixin hover-link($color) {
+    border-bottom: 1px solid $color;
+}
+
+@mixin paragraph {
+    font-size: $font-m;
+    line-height: 1.6;
 }
 
 
@@ -47,18 +56,18 @@
     };
 
     @if $breakpoints == tab-land {
-        @media screen and (min-width: 1100px) {@content}
+        @media screen and (min-width: 1024px) {@content}
     };
 
     @if $breakpoints == desktop {
-        @media screen and (min-width: 1365px) {@content}
+        @media screen and (min-width: 1355px) {@content}
     };
 
     @if $breakpoints == big-screen {
         @media screen and (min-width: 1600px) {@content}
     };
 
-    // @if $breakpoints == touch-device {
-    //     @media (hover: hover) {@content}
-    // }
+    @if $breakpoints == touch-device {
+        @media (hover: hover) {@content}
+    }
 }

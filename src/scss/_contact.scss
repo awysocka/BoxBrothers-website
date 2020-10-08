@@ -1,5 +1,6 @@
 .contact {
     background-color: $color-orange;
+    margin-bottom: 0;
     
     &-content {
         max-width: $max-content-width;
@@ -7,27 +8,20 @@
         padding: $sp-large/2 2rem;
     }
 
-    .heading-secondary {
+    &-list {
         color: $color-white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: $font-m;
     }
 
-    .heading-secondary:after {
-        border: 1px solid $color-white;
-    }
-}
-
-.contact-list {
-    color: $color-white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: $font-m;
-
-    .contact-item {
+    &-item {
         text-align: center;
+        flex: 0 0 100%;
 
         &:not(:last-child) {
-            margin-bottom: $sp-small*2;
+            margin-bottom: $sp-small*4;
         }
 
         .phone::before {
@@ -48,43 +42,74 @@
             font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f0e0";
         }
     }
-}
-
-.contact-description {
-
-    text-align: center;
-
-    span {
-        display: block;
-    }
-
-    a {
-        color: $color-white;
-    }
     
+    &-description {
+        text-align: center;
+    
+        span {
+            display: block;
+        }
+    
+        a {
+            color: $color-white;
+        }
+    }
 }
+
 
 //MEDIA QUERIES 
 
+@include respond(tab-port) {
+
+    .contact {
+
+        &-content {
+            padding: $sp-large/2 4rem;
+        }
+
+        &-list {
+            flex-direction: row;
+            align-items: flex-start; 
+        }
+
+        &-item {
+                
+            flex: 0 0 33.3%;
+        }
+    }
+}
+
 @include respond(tab-land) {
+
     .contact {
 
         &-content {
             padding: $sp-large 4rem;
         }
-    }
 
-    .contact-list {
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-        font-size: $font-xs*4;
+        &-list {
+            justify-content: space-between;
+            font-size: $font-xs*3;
+        }
 
-        .contact-item {
+        &-item {
             text-align: center;
     
             &:not(:last-child) {
                 margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@include respond(touch-device) {
+
+    .contact {
+
+        &-item {
+
+            a:hover {
+                @include hover-link($color-white);
             }
         }
     }

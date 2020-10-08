@@ -1,0 +1,115 @@
+.heading-primary {
+    color: $color-blue;
+    font-size: $font-s*3;
+    margin-bottom: $sp-small*2;
+
+    span {
+        display: block;
+        font-size: $font-s*2;
+        line-height: 1.6;
+    }
+}
+
+.heading-secondary {
+    color: $color-blue;
+    font-size: $font-s*2;
+    text-transform: uppercase;
+    position: relative;
+    text-align: center;
+    margin-bottom: 4rem ;
+}
+
+.heading-secondary::after {
+    content: ' ';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform:translateX(-50%);
+    margin-top: 5px;
+    display: block;
+    border: 1px solid $color-blue;
+    border-radius: 2px;
+    width: 6rem;
+}
+
+.heading-secondary-white {
+    color: $color-white;
+}
+
+.heading-secondary-white::after {
+    border: 1px solid $color-white;
+}
+
+.heading-secondary-without-underline {
+    margin-bottom: 0;
+}
+
+.heading-secondary-without-underline::after {
+    display: none;
+}
+
+//MEDIA QUERIES
+
+@include respond(tab-port) {
+
+    .heading-primary {
+        font-size: $font-s*4;
+        margin-bottom: $sp-small*3;
+
+        span {
+            font-size: $font-s*3;
+        }
+    }
+
+    .heading-secondary-without-underline {
+        max-width: 450px;
+    }
+}
+
+@include respond(tab-land) {
+    
+    .heading-primary {
+        font-size: $font-s*4 + $font-xs;
+        margin-bottom: $sp-small*3;
+
+        span {
+            font-size: $font-s*3 + $font-xs;
+        }
+    }
+
+    .heading-secondary {
+        font-size: $font-s*3;
+    }
+
+    .heading-secondary::after {
+        width: 8rem;
+    }
+
+    .heading-secondary-without-underline {
+        max-width: 660px;
+    }
+}
+
+@include respond(desktop) {
+
+    .heading-primary {
+        font-size: $font-s*5 + $font-xs;
+        margin-bottom: $sp-small*3;
+
+        span {
+            font-size: $font-s*4;
+        }
+    }
+}
+
+@include respond(big-screen) {
+
+    .heading-primary {
+        font-size: $font-s*6;
+        margin-bottom: $sp-small*3;
+
+        span {
+            font-size: $font-s*4 + $font-xs;
+        }
+    }
+}

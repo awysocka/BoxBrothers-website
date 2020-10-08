@@ -1,31 +1,23 @@
-.cta-divider {
+.divider {
     background: url(../img/ice.jpg) no-repeat center;
     background-size: cover; 
-    margin-bottom: $sp-large/2; 
 
-    .cta-background {
+    &-background {
         background-color: rgba(244,244,244,0.7);
     }
-}
 
-.divider-content {
-    padding: 5rem 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-
-    .heading-secondary {
-        margin-bottom: 0;
-    }
-
-    .heading-secondary::after {
-        display: none;
+    &-content {
+        padding: 5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .paragraph {
+        @include paragraph;
+
         margin: 3rem 0;
-        font-size: $font-m;
         text-align: center;
 
         span {
@@ -39,33 +31,29 @@
 }
 
 @include respond(tab-port) {
-    .divider-content {
-        .heading-secondary {
-            max-width: 450px;
+
+    .divider {
+
+        &-content {
+            padding: 5rem 4rem;
         }
 
         .cta-btn {
             font-size: $font-m;
         }
-    }
+    } 
 }
 
 @include respond(tab-land) {
 
-    .cta-divider {
-        margin-bottom: $sp-large; 
-    }
+    .divider {
 
-    .divider-content {
-        padding: $sp-large 4rem;
-
-        .heading-secondary {
-            max-width: 660px;
+        &-content {
+            padding: $sp-large 4rem;
         }
 
         .paragraph {
             margin: 5rem 0;
-            line-height: 1.6;
         }
-    }
+    }   
 }
