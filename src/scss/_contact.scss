@@ -102,6 +102,16 @@
     }
 }
 
+@include respond(big-screen) {
+
+    .contact {
+
+        &-list {
+            font-size: $font-s*2;
+        }
+    }
+}
+
 @include respond(touch-device) {
 
     .contact {

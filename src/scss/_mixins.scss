@@ -47,6 +47,10 @@
 @mixin paragraph {
     font-size: $font-m;
     line-height: 1.6;
+
+    @include respond(big-screen) {
+        font-size: $font-xs*3;
+    }
 }
 
 
