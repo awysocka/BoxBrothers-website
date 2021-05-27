@@ -36,6 +36,13 @@
         font-size: $font-s*2;
         font-weight: 600;
     }
+
+    .paragraph-postscript {
+        margin: 3rem auto 0;
+        padding: 0 2rem;
+        max-width: $max-content-width;
+        font-size: $font-xs*2;
+    }
 }
 
 
@@ -44,6 +51,10 @@
     .delivery {
 
         &-content {
+            padding: 0 4rem;
+        }
+
+        .paragraph-postscript {
             padding: 0 4rem;
         }
     }
@@ -81,6 +92,10 @@
         .main {
             font-size: $font-xs*4;
             padding-bottom: 4rem;
+        }
+
+        .paragraph-postscript {
+            font-size: 1.4rem;
         }
     }
 }
